@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneApp.Views.ShopDetailView"
+             BackgroundColor="#fafafa"
+             >
+    <Grid>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical" Spacing="10">
+                <Frame Padding="5,10" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="基础信息" Margin="20,5" FontSize="13" FontAttributes="Bold"/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="店铺编号：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="P12309" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="店铺名称：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="滔搏投资运城市河东街滔博运动城Kids店" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="所属客户：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="阿迪达斯" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="区域：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="North/北京/北京市" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="城市级别：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="T1" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="联系人1：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="张店长/13122234431" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="联系人2：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="刘先生/13889098876" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="店铺地址：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="北京市海淀区中关村南大街2号地下一层adidas运动店" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="店铺类型：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="Kids/Kids-S" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="器架类型：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="渠道：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="客服：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="孙佳佳" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="店铺状态：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="正常" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="备注：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="5,10" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="费用信息" Margin="20,5" FontSize="13" FontAttributes="Bold"/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="施工费：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" Text="200" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="2" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="3" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="垃圾处理费：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" Text="350" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="2" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="3" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="5,10" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="安装级别/店内安装费" Margin="20,5" FontSize="13" FontAttributes="Bold"/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="大货：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Y" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="1" Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="2" Text="" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="3" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="4" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="三叶草：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Y" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="1" Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="2" Text="" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="3" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="4" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="常规：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Y" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="1" Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="2" Text="" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="3" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="4" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="5,10,5,50" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="外协信息" Margin="20,5" FontSize="13" FontAttributes="Bold"/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="安装外协：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="北京卡乐" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="生产外协：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="北京卡乐" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentView>

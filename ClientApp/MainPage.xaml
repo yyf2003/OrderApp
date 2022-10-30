@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientApp.MainPage"
+             xmlns:views="clr-namespace:ClientApp.Views"
+             xmlns:tabs="http://sharpnado.com"
+             Padding="0"
+             >
+    <!--BasedOn="{StaticResource MaterialTabStyle}"-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BottomTabStyle"
+                   TargetType="tabs:MaterialUnderlinedTabItem">
+                <Setter Property="LabelSize" Value="12" />
+                <Setter Property="UnselectedLabelColor" Value="Gray"/>
+                <Setter Property="UnderlineAllTab" Value="False"/>
+                <Setter Property="UnderlineHeight" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <tabs:ViewSwitcher x:Name="Switcher"
+                           Animate="True"
+                           SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}"
+                          >
+                <tabs:DelayedView x:TypeArguments="views:HomePage"
+                              AccentColor="{StaticResource Primary}"
+                              Animate="True"
+                              BindingContext="{Binding HomePageViewModel}"
+                              UseActivityIndicator="True" />
+                <tabs:DelayedView x:TypeArguments="views:OutsourcePage"
+                              AccentColor="{StaticResource Primary}"
+                              Animate="True"
+                              UseActivityIndicator="True" />
+                <tabs:DelayedView x:TypeArguments="views:StatisticsPage"
+                              AccentColor="{StaticResource Primary}"
+                              Animate="True"
+                              UseActivityIndicator="True" />
+                <tabs:LazyView x:TypeArguments="views:MyPage" Animate="True" />
+            </tabs:ViewSwitcher>
+        </Grid>
+        <tabs:TabHostView x:Name="TabHostButton"
+                                      Grid.Row="1"
+                                      Margin="0"
+                           SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}"
+                                      BackgroundColor="{StaticResource Gray900}">
+            <tabs:MaterialUnderlinedTabItem Style="{StaticResource BottomTabStyle}"
+                                                        IconImageSource="house_96.png"
+                                                        IconOptions="TopIcon"
+                                                        IconSize="23"
+                                                        IconTextSpacing="0"
+                                                        Label="首页" />
+            <tabs:MaterialUnderlinedTabItem Style="{StaticResource BottomTabStyle}"
+                                                        IconImageSource="outsource.png"
+                                                        IconOptions="TopIcon"
+                                                        IconSize="23"
+                                                        IconTextSpacing="0"
+                                                        Label="外协" />
+            <tabs:MaterialUnderlinedTabItem Style="{StaticResource BottomTabStyle}"
+                                                        IconImageSource="statistics.png"
+                                                        IconOptions="TopIcon"
+                                                        IconSize="23"
+                                                        IconTextSpacing="0"
+                                                        Label="统计" />
+            <tabs:MaterialUnderlinedTabItem Style="{StaticResource BottomTabStyle}"
+                                                        IconImageSource="grid_view_96.png"
+                                                        IconOptions="TopIcon"
+                                                        IconSize="23"
+                                                        IconTextSpacing="0"
+                                                        Label="我的" />
+
+        </tabs:TabHostView>
+    </Grid>
+</ContentPage>

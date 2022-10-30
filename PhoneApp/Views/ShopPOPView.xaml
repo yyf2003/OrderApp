@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneApp.Views.ShopPOPView"
+             BackgroundColor="#fafafa"
+             >
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AddBtnStyle" TargetType="Button">
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="15"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical" Spacing="10">
+                <Frame Padding="5,10" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="位置：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="鞋墙" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="器架编号：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="FTW-01" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="性别：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="男" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="数量：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="1" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="尺寸：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="1200*2400" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="材质：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="背胶PP" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="选图：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="男小童" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="位置类型：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="GP" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="是否生产：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="是" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="安装费：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" Text="" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="2" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="3" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="生产外协：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="备注：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="5,10" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="位置：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="SMU" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="器架编号：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="SMU-01" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="性别：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="男" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="数量：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="1" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="尺寸：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="2400*2000" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="材质：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="背胶PP+3mm雪佛版" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="选图：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="位置类型：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="是否生产：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="是" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="安装费：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" Text="" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="2" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="3" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="生产外协：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="备注：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="带出血5mm" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="5,10" BorderColor="Transparent">
+                    <StackLayout Orientation="Vertical">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="位置：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="SMU" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="器架编号：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="SMU-02" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="性别：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="女" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="数量：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="1" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="尺寸：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="2400*2000" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="材质：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="背胶PP+3mm雪佛版" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="选图：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="位置类型：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="是否生产：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="是" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="安装费：" HorizontalOptions="End" FontSize="13"/>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="应收：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" Text="" FontSize="13" HorizontalOptions="Start"/>
+                                <Label Grid.Column="2" Text="应付：" FontSize="13" HorizontalOptions="End"/>
+                                <Label Grid.Column="3" Text="" FontSize="13" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="生产外协：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="备注：" HorizontalOptions="End" FontSize="13"/>
+                            <Label Grid.Column="1" Text="" FontSize="12" HorizontalOptions="Start"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <Button Text="+" Style="{StaticResource AddBtnStyle}"/>
+    </Grid>
+</ContentView>

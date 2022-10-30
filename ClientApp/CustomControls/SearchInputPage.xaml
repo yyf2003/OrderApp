@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientApp.CustomControls.SearchInputPage"
+             Shell.TabBarIsVisible="False"
+             >
+    <Grid Margin="10,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton x:Name="btn_back" Source="back.svg" WidthRequest="20" HeightRequest="20"
+                         Clicked="btn_back_Clicked"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         />
+            <Frame Grid.Column="1" Padding="0" CornerRadius="15" HeightRequest="32">
+                <StackLayout Orientation="Horizontal" Margin="10,5" 
+                     VerticalOptions="CenterAndExpand">
+                    <Image Source="search.svg" HeightRequest="20" WidthRequest="20"
+                   VerticalOptions="CenterAndExpand"
+                   />
+                    <Entry x:Name="TextInput" HeightRequest="38" 
+                           WidthRequest="300"
+                           Margin="5,0,0,-2" HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           MaxLength="20"
+                           />
+                </StackLayout>
+            </Frame>
+            <Label Grid.Column="2" Text="搜索" VerticalOptions="Center" HorizontalOptions="Center"
+                   TextColor="Blue"
+                   >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSearch_Click"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <Grid Grid.Row="1">
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Grid.GestureRecognizers>
+        </Grid>
+    </Grid>
+</ContentPage>

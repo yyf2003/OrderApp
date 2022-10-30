@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientApp.CustomControls.SearchControl" Padding="0"
+             x:Name="this"
+             >
+    <Frame Padding="0" CornerRadius="15" HeightRequest="32">
+        <StackLayout Orientation="Horizontal" Margin="10,5" 
+                     VerticalOptions="CenterAndExpand">
+            <Image Source="search.svg" HeightRequest="20" WidthRequest="20"
+                   VerticalOptions="CenterAndExpand"
+                   />
+            <Label x:Name="lab_placeholder" Text="{Binding Source={x:Reference this},Path=Placeholder}" TextColor="#999" Margin="8,0,0,0"
+                   VerticalOptions="CenterAndExpand"
+                   
+                   />
+            <Frame Padding="5,3" VerticalOptions="CenterAndExpand"
+                   BackgroundColor="#f0f0f0"
+                   CornerRadius="12"
+                   BorderColor="Transparent"
+                   x:Name="frame_inputtext"
+                   >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Source={x:Reference this},Path=SearchKey}" VerticalOptions="CenterAndExpand" FontSize="12"
+                           Margin="5,0,0,0"
+                           />
+                    <ImageButton Source="delete_red.svg" VerticalOptions="CenterAndExpand"
+                                 WidthRequest="15"
+                                 HeightRequest="15"
+                                 HorizontalOptions="End"
+                                 Margin="5,0,0,0">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="DeleteInputText_Clicked"/>
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+        </Frame.GestureRecognizers>
+    </Frame>
+</ContentView>

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneApp.Views.HomePageView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             BackgroundColor="#fafafa"
+             x:Name="this"
+             >
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="radioStyle" TargetType="RadioButton">
+                <Setter Property="FontSize"  Value="13"/>
+                <Setter Property="ControlTemplate">
+                    <ControlTemplate>
+                        <Grid  VerticalOptions="Center"
+                                     BackgroundColor="{TemplateBinding BackgroundColor}"
+                                     WidthRequest="{TemplateBinding WidthRequest}"
+                                     HeightRequest="35"
+                                     >
+                            <Label Text="{TemplateBinding Content}"
+                                   FontAttributes="{TemplateBinding FontAttributes}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   TextColor="{TemplateBinding TextColor}"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   />
+                            <!--<Border BackgroundColor="Red"
+                                        StrokeShape="RoundRectangle 10"
+                                        StrokeThickness="0"
+                                        IsVisible="{TemplateBinding IsChecked}"
+                                        HorizontalOptions="Center"
+                                        />-->
+                        </Grid>
+
+                    </ControlTemplate>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsChecked" Value="True" TargetType="RadioButton">
+                        <Setter Property="FontAttributes"  Value="Bold"/>
+                        <Setter Property="TextColor"  Value="Red"/>
+                    </Trigger>
+                    <Trigger Property="IsChecked" Value="False" TargetType="RadioButton">
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontAttributes"  Value="None"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="首页" FontSize="22" 
+                   FontAttributes="Bold" 
+                   VerticalOptions="Center"
+                   Margin="5,0,0,0"
+                   />
+            <toolkit:AvatarView Grid.Column="1" ImageSource="user.jpg" HeightRequest="40" WidthRequest="40"
+                                VerticalOptions="Center"
+                                />
+        </Grid>
+        <ScrollView Orientation="Vertical" 
+                    Grid.Row="1"
+                    VerticalScrollBarVisibility="Never">
+            <StackLayout Orientation="Vertical" Margin="0,10,0,0">
+                <CollectionView ItemsSource="{Binding NavItemList}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="15,0,10,0">
+                                <Frame WidthRequest="65" HeightRequest="48"
+                                   CornerRadius="25"
+                                   Padding="0"
+                                   BorderColor="Transparent"
+                                   BackgroundColor="Green"
+                               >
+                                    <Image Source="h_shop" HeightRequest="25" WidthRequest="65">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={x:Reference this},Path=BindingContext.NavToCommand}" CommandParameter="ShopPage"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                                <Label Text="{Binding}" TextColor="Black" HorizontalOptions="Center"
+                                   Margin="0,8,0,0"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Grid Margin="10,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="90"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame BackgroundColor="#ffffff"  Margin="5" BorderColor="#f0f0f0"
+                           HasShadow="False"
+                           Padding="0">
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Margin="15,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="待审批项目" FontSize="12" VerticalOptions="Center"/>
+                                    <Frame Padding="0" HeightRequest="22" WidthRequest="22" 
+                                           VerticalOptions="Center"
+                                           CornerRadius="11"
+                                           BackgroundColor="Red"
+                                           BorderColor="Transparent"
+                                           Margin="5,0,0,0"
+                                           >
+                                        <Label Text="5" HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="White"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               />
+                                    </Frame>
+                                </StackLayout>
+                                <Label Text="正常订单" FontSize="11" Margin="0,6,0,0"
+                                       TextColor="#990"
+                                       />
+                            </StackLayout>
+                            <Image Source="h_approve" Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="Start"
+                                   Aspect="AspectFill"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   />
+                        </Grid>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="5" Grid.Column="1" 
+                          HasShadow="False"
+                           BorderColor="#f0f0f0" Padding="0">
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Margin="15,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="待审批项目" FontSize="12" VerticalOptions="Center"/>
+                                    <Frame Padding="0" HeightRequest="22" WidthRequest="22" 
+                                           VerticalOptions="Center"
+                                           CornerRadius="11"
+                                           BackgroundColor="Red"
+                                           BorderColor="Transparent"
+                                           Margin="5,0,0,0"
+                                           >
+                                        <Label Text="5" HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="White"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               />
+                                    </Frame>
+                                </StackLayout>
+                                <Label Text="修改申请" FontSize="11" Margin="0,6,0,0"
+                                       TextColor="#990"
+                                       />
+                            </StackLayout>
+                            <Image Source="h_m_approve" Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="Start"
+                                   Aspect="AspectFill"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   />
+                        </Grid>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="5" Grid.Row="1" Grid.Column="0"
+                           HasShadow="False"
+                           BorderColor="#f0f0f0" Padding="0">
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Margin="15,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="审批不通过" FontSize="12" VerticalOptions="Center" TextColor="Red"/>
+                                    <Frame Padding="0" HeightRequest="22" WidthRequest="22" 
+                                           VerticalOptions="Center"
+                                           CornerRadius="11"
+                                           BackgroundColor="Red"
+                                           BorderColor="Transparent"
+                                           Margin="5,0,0,0"
+                                           >
+                                        <Label Text="5" HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="White"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               />
+                                    </Frame>
+                                </StackLayout>
+                                <Label Text="修改申请" FontSize="11" Margin="0,6,0,0"
+                                       TextColor="#990"
+                                       />
+                            </StackLayout>
+                            <Image Source="h_notpass" Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="Start"
+                                   Aspect="AspectFill"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   />
+                        </Grid>
+                    </Frame>
+                    <Frame BackgroundColor="White" Margin="5" Grid.Row="1" Grid.Column="1" 
+                            HasShadow="False"
+                           BorderColor="#f0f0f0" Padding="0">
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Margin="15,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="待处理项目" FontSize="12" VerticalOptions="Center"/>
+                                    <Frame Padding="0" HeightRequest="22" WidthRequest="22" 
+                                           VerticalOptions="Center"
+                                           CornerRadius="11"
+                                           BackgroundColor="Red"
+                                           BorderColor="Transparent"
+                                           Margin="5,0,0,0"
+                                           >
+                                        <Label Text="5" HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="White"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               />
+                                    </Frame>
+                                </StackLayout>
+                                <Label Text="修改申请" FontSize="11" Margin="0,6,0,0"
+                                       TextColor="#990"
+                                       />
+                            </StackLayout>
+                            <Image Source="h_approved" Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="Start"
+                                   Aspect="AspectFill"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   />
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <Frame Padding="0" BorderColor="Transparent" Margin="5,0">
+                    <StackLayout Orientation="Vertical" Margin="0,10">
+                        <Grid Margin="15,10,15,0" HeightRequest="35">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="活动" Grid.Column="0" FontSize="15" FontAttributes="Bold" VerticalOptions="Center"/>
+
+                            <!--<ScrollView x:Name="month_ScrollView" Grid.Column="1" Orientation="Horizontal"
+                                        HorizontalScrollBarVisibility="Never"
+                                        WidthRequest="180"
+                                        >-->
+
+                            <!--<CollectionView Grid.Column="1" ItemsSource="{Binding MonthList}" x:Name="CollectionView1"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            >
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <RadioButton 
+                                                WidthRequest="60"
+                                                HeightRequest="35"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Center"
+                                                Content="{Binding Value}" IsChecked="{Binding IsChecked}" Margin="{Binding Margin}" 
+                                                Style="{StaticResource radioStyle}"  
+                                             />
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" RadioButtonGroup.GroupName="month"/>
+                                </CollectionView.ItemsLayout>
+                            </CollectionView>-->
+                            <!--</ScrollView>-->
+                            <Label Text="更多..." Grid.Column="2" VerticalOptions="Center"
+                               HorizontalOptions="EndAndExpand"
+                               FontSize="12"
+                           />
+
+                        </Grid>
+                        <StackLayout Orientation="Vertical" Margin="0,15,0,10">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Padding="0" HeightRequest="40" WidthRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#007947"
+                               BorderColor="Transparent"
+                               VerticalOptions="Start"
+                               >
+                                    <Label Text="POP" FontSize="13" FontAttributes="Bold"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   TextColor="White"
+                                   />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Spacing="3">
+                                    <Label Text="2022年10月TERREX活动" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="2022-9-25 至 2022-10-10" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="安装" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="yu1：2022-9-25" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Padding="0" HeightRequest="40" WidthRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#007947"
+                               BorderColor="Transparent"
+                               VerticalOptions="Start"
+                               >
+                                    <Label Text="POP" FontSize="13" FontAttributes="Bold"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   TextColor="White"
+                                   />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Spacing="3">
+                                    <Label Text="2022年10月童店新开店活动" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="2022-9-25 至 2022-10-10" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="安装" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="yu1：2022-9-25" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Padding="0" HeightRequest="40" WidthRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#007947"
+                               BorderColor="Transparent"
+                               VerticalOptions="Start"
+                               >
+                                    <Label Text="POP" FontSize="13" FontAttributes="Bold"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   TextColor="White"
+                                   />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Spacing="3">
+                                    <Label Text="2022年10月分区SP新开店" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="2022-9-25 至 2022-10-26" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="分区活动" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="yu1：2022-9-26" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Padding="0" HeightRequest="40" WidthRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#2a5caa"
+                               BorderColor="Transparent"
+                               VerticalOptions="Start"
+                               >
+                                    <Label Text="道具" FontSize="13" FontAttributes="Bold"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   TextColor="White"
+                                   />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Spacing="3">
+                                    <Label Text="2022年10月童店新开店促销道具" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="2022-9-25 至 2022-10-10" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="发货" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="yu1：2022-9-25" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Padding="0" HeightRequest="40" WidthRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#2a5caa"
+                               BorderColor="Transparent"
+                               VerticalOptions="Start"
+                               >
+                                    <Label Text="道具" FontSize="13" FontAttributes="Bold"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   TextColor="White"
+                                   />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Spacing="3">
+                                    <Label Text="2022年10月BB道具" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="2022-9-25 至 2022-10-10" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="发货" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="yu1：2022-9-25" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Padding="0" HeightRequest="40" WidthRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#007947"
+                               BorderColor="Transparent"
+                               VerticalOptions="Start"
+                               >
+                                    <Label Text="POP" FontSize="13" FontAttributes="Bold"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   TextColor="White"
+                                   />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Margin="10,0,0,0" Spacing="3">
+                                    <Label Text="202210 RN-HYPE ADIZERO PRIME X" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="2022-9-25 至 2022-10-10" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="快递(促销)" FontSize="12" TextColor="Gray"/>
+                                    <Label Text="yu1：2022-9-25" FontSize="12" TextColor="Gray"/>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentView>
